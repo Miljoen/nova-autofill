@@ -12,11 +12,11 @@ class NovaAutofill extends Field
      */
     public $component = 'nova-autofill';
 
-    public function options(string $filterKey, Collection $options, Collection $objects): NovaAutofill {
+    public function options(string $filterKey, Collection $options, Collection $models): NovaAutofill {
         return $this->withMeta([
             'filterKey' => $filterKey,
             'options'   => $options,
-            'objects'   => $objects,
+            'objects'   => $models,
         ]);
     }
 }
