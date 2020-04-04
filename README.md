@@ -25,13 +25,13 @@ class MyField extends Field
 {
     public function fields(Request $request)
     {
-        $filterKey = Model::getFilterKey();
-        $models    = Model::getModelInstances();
-        $options   = Model::getOptionsForModels($models);
+        $filterKey = Model::getFilterKey();               // Column from which to filter the selected model, e.g. "email"
+        $models    = Model::getModelInstances();          // Collection of instances of a Model (These can be mocked)
+        $options   = Model::getOptionsForModels($models); // Collection of strings that represent each model
 
         return [
             // The second parameter (id) can be any value that exists as a column on the model.
-            Autofill::make('Autofill', 'id')->options($filterKey, $autofillTags, $autofillData);
+            Autofill::make('Autofill', 'id')->options($filterKey, $options, $models);
         ];
     }
 }
