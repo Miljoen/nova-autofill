@@ -1,5 +1,5 @@
 {
-    "name": "Miljoen/nova-autofill",
+    "name": "miljoen/nova-autofill",
     "description": "A Laravel Nova field.",
     "keywords": [
         "laravel",
