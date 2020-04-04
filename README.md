@@ -19,19 +19,22 @@ Add to Nova Field
 namespace App\Nova;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Miljoen\NovaAutofill\Autofill;
 
 class MyField extends Field
 {
     public function fields(Request $request)
     {
-        $filterKey = Model::getFilterKey();               // Column from which to filter the selected model, e.g. "email"
-        $models    = Model::getModelInstances();          // Collection of instances of a Model (These can be mocked)
-        $options   = Model::getOptionsForModels($models); // Collection of strings that represent each model
+        /** @var string $filterKey */
+        $filterKey = Model::getFilterKey();   // Column from which to filter the selected model, e.g. "email"
+        
+        /** @var Collection */
+        $models = Model::getModelInstances(); // Instances of the Nova parent model (These can be mocked)
 
         return [
             // The second parameter (id) can be any value that exists as a column on the model.
-            Autofill::make('Autofill', 'id')->options($filterKey, $options, $models);
+            Autofill::make('Nova Autofill', 'id')->options($filterKey, $models),
         ];
     }
 }
