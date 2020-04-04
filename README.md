@@ -1,7 +1,7 @@
 # nova-autofill
 nova-autofill is a Laravel Nova package to automatically fill in Laravel Nova FormFields.
 
-![Screenshot](https://github.com/Miljoen/nova-autofill/raw/master/screenshot.png)
+![](https://im4.ezgif.com/tmp/ezgif-4-d2a8e0073df9.gif)
 
 ## Installation
 
