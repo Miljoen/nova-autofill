@@ -1,7 +1,7 @@
 # nova-autofill
-nova-autofill is a Laravel Nova package to automatically fill in Laravel Nova FormFields.
+nova-autofill is a Laravel Nova package that allows for automatic filling of Nova FormFields.
 
-![](https://im4.ezgif.com/tmp/ezgif-4-d2a8e0073df9.gif)
+![](https://media.giphy.com/media/KxWdeLiOc5YXmw7KlU/giphy.gif)
 
 ## Installation
 
@@ -30,7 +30,7 @@ class MyField extends Field
         $filterKey = Model::getFilterKey();   // Column from which to filter the selected model, e.g. "email"
         
         /** @var Collection */
-        $models = Model::getModelInstances(); // Instances of the Nova parent model (These can be mocked)
+        $models = Model::getModelInstances(); // Instances of the parent model to autofill (These can be mocked)
 
         return [
             // The second parameter (id) can be any value that exists as a column on the model.
@@ -40,4 +40,4 @@ class MyField extends Field
 }
 ```
 
-Note: NovaAutoFill works for any model, but you have to implement the model retrievals for `$filterKey`, `$models` and `$options` yourself.
+Note: NovaAutoFill works for any Laravel model, but you have to implement the model retrievals for `$filterKey` and `$models` yourself.
